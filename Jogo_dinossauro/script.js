@@ -5,7 +5,6 @@ let dinoPosition = 0;
 
 function handleKeyup(event) {
     let keyPressed = event.keyCode;
-    console.log(keyPressed);
     if (keyPressed === 32) {
         if (!isJumping) {
             jump();
@@ -37,15 +36,11 @@ function jump() {
     }, 20);
 };
 
-function down(){
-
-};
-
 function createCactus() {
     const cactus = document.createElement('div');
     let cactusPosition = 1000;
-    let randomTime = Math.random() * 3000;
-    if(randomTime < 300) randomTime = 310;
+    let randomTime = Math.random() * 6000;
+    if(randomTime < 1000) randomTime = 1000;
 
     cactus.classList.add('cactus');
     cactus.style.left = cactusPosition + 'px';
@@ -65,7 +60,6 @@ function createCactus() {
         }
     }, 20);
 
-    console.log(randomTime)
     setTimeout(createCactus, randomTime);
 };
 
